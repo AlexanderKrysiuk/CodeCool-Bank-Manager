@@ -1,13 +1,31 @@
 ﻿using System;
 
-public class Savings : Account
+public class Saveings : Account
 {
-	public decimal Interests { get; set; }
-	public Savings()
-	{
-	}
-	void UpdateAccountBalance()
+    public decimal Interests { get; private set; }
+
+    public Saveings()
     {
-		Balance = Balance + (Balance * Interests / 100);
+
+    }
+
+    void IncreaseInterests(decimal increasingAmount)
+    {
+        Interests += increasingAmount;
+    }
+
+}
+public class Account
+{
+    public decimal Balance { get; private set; }
+
+    public Account()
+    {
+
+    }
+
+    void IncreaseBalance(decimal accountValueBalance)
+    {
+        Balance += accountValueBalance;
     }
 }
